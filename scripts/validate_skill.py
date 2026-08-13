@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -37,6 +38,18 @@ def main() -> int:
     metadata = ROOT / "skills/dopamine/agents/openai.yaml"
     if not metadata.is_file() or "$dopamine" not in metadata.read_text(encoding="utf-8"):
         errors.append("agents/openai.yaml must include a $dopamine default prompt")
+    marketplace_path = ROOT / ".claude-plugin/marketplace.json"
+    try:
+        marketplace = json.loads(marketplace_path.read_text(encoding="utf-8"))
+        plugins = marketplace.get("plugins", [])
+        if marketplace.get("name") != "dopamine-skills":
+            errors.append("Claude marketplace name must be dopamine-skills")
+        if len(plugins) != 1 or plugins[0].get("name") != "dopamine":
+            errors.append("Claude marketplace must expose exactly the dopamine plugin")
+        if plugins and plugins[0].get("skills") != ["./skills/dopamine"]:
+            errors.append("Claude marketplace must expose only skills/dopamine")
+    except (OSError, json.JSONDecodeError) as error:
+        errors.append(f"invalid Claude marketplace manifest: {error}")
     if errors:
         print("\n".join(f"ERROR: {error}" for error in errors), file=sys.stderr)
         return 1

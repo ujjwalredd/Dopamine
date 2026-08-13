@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0-58a6ff?style=flat-square" alt="Version 0.1.0">
   <img src="https://img.shields.io/badge/skill-valid-2da44e?style=flat-square" alt="Skill valid">
-  <img src="https://img.shields.io/badge/tests-8%20passing-2da44e?style=flat-square" alt="Eight tests passing">
+  <img src="https://img.shields.io/badge/tests-10%20passing-2da44e?style=flat-square" alt="Ten tests passing">
   <img src="https://img.shields.io/badge/license-MIT-58a6ff?style=flat-square" alt="MIT license">
 </p>
 
@@ -186,43 +186,55 @@ Security controls, trust-boundary validation, accessibility basics, public compa
 
 ## Install
 
-Dopamine currently ships as a standalone [Agent Skill](https://learn.chatgpt.com/docs/build-skills): a `SKILL.md` file, optional references, and UI metadata.
+Dopamine follows the open Agent Skills directory format. One dependency-free installer supports both Codex and Claude Code.
 
-### Repository-scoped Codex skill
+### Codex + Claude Code
 
-From the repository where you want Dopamine available:
-
-```sh
-mkdir -p .agents/skills
-cp -R /path/to/Dopamine/skills/dopamine .agents/skills/dopamine
-```
-
-Codex discovers repository skills from `.agents/skills` between the working directory and repository root.
-
-### User-scoped Codex skill
-
-To make it available across repositories:
+From this checkout, install Dopamine for your user account in both agents:
 
 ```sh
-mkdir -p "$HOME/.agents/skills"
-cp -R /path/to/Dopamine/skills/dopamine "$HOME/.agents/skills/dopamine"
+./scripts/install.sh --agent all --scope user
 ```
 
-Restart Codex if a newly installed skill does not appear.
+Or install it only in the current project:
 
-### Use directly from this checkout
+```sh
+./scripts/install.sh --agent all --scope project
+```
 
-Launch Codex from the project root and invoke the skill explicitly:
+Choose one agent with `--agent codex` or `--agent claude`. The installer refuses to overwrite an existing installation.
+
+| Agent | User installation | Project installation | Explicit invocation |
+|---|---|---|---|
+| Codex | `$HOME/.agents/skills/dopamine` | `.agents/skills/dopamine` | `$dopamine` |
+| Claude Code | `$HOME/.claude/skills/dopamine` | `.claude/skills/dopamine` | `/dopamine` |
+
+### Claude Code plugin marketplace
+
+This repository is also a validated Claude Code marketplace. After it is published on GitHub, replace `OWNER` with the repository owner:
+
+```text
+/plugin marketplace add OWNER/Dopamine
+/plugin install dopamine@dopamine-skills
+```
+
+Claude may ask for `/reload-plugins` after installation. Plugin invocation is namespaced as `/dopamine:dopamine`. See Claude Code's official [skill](https://code.claude.com/docs/en/slash-commands) and [plugin marketplace](https://code.claude.com/docs/en/discover-plugins) documentation.
+
+### Start using it
+
+Codex:
 
 ```text
 Use $dopamine to implement this with the smallest verified change.
 ```
 
-The skill can also activate implicitly when a task matches its description.
+Claude Code:
 
-### Other Agent Skills hosts
+```text
+/dopamine implement this with the smallest verified change.
+```
 
-The core package follows the open Agent Skills directory format. Installation locations and invocation syntax differ by host. Only the Codex paths above are tested by this repository; support for other hosts should not be assumed without validation.
+Both agents can also select Dopamine automatically when the request matches its description.
 
 ## Usage
 
