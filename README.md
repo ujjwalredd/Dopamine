@@ -1,5 +1,5 @@
 <p align="center">
-  <span style="font-size: 72px">🧠⚡</span>
+  <img src="assets/Dopamine.png" width="718" alt="Dopamine molecular structure">
 </p>
 
 <h1 align="center">Dopamine</h1>
