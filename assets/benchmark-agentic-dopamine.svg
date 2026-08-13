@@ -1,0 +1,69 @@
+<svg viewBox="0 0 860 510" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+  <title>Dopamine tuning benchmark versus Ponytail, Caveman, and baseline</title>
+  <desc>Lower is better. Dopamine wins source LOC, tokens, estimated cost, and time on this development set. Dopamine has 4 runs per task; frozen reference arms have 1.</desc>
+  <rect x="0.5" y="0.5" width="859" height="509" rx="10" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="430" y="26" font-size="15" font-weight="600" fill="#1f2328" text-anchor="middle">Agentic efficiency — 12 identical real-repository tasks</text>
+  <text x="430" y="47" font-size="11" fill="#57606a" text-anchor="middle">GPT-5.6 Terra · medium effort · percent of no-skill baseline · lower is better</text>
+  <rect x="230" y="61" width="12" height="12" rx="2" fill="#6e7781"/>
+  <text x="247" y="71" font-size="12" fill="#57606a">baseline</text>
+  <rect x="330" y="61" width="12" height="12" rx="2" fill="#bc6b00"/>
+  <text x="347" y="71" font-size="12" fill="#57606a">caveman</text>
+  <rect x="422" y="61" width="12" height="12" rx="2" fill="#1a7f37"/>
+  <text x="439" y="71" font-size="12" fill="#57606a">ponytail</text>
+  <rect x="514" y="61" width="12" height="12" rx="2" fill="#0969da"/>
+  <text x="531" y="71" font-size="12" fill="#57606a">dopamine</text>
+  <line x1="85" y1="382" x2="815" y2="382" stroke="#8c959f"/>
+  <line x1="85" y1="327" x2="815" y2="327" stroke="#d8dee4"/>
+  <line x1="85" y1="272" x2="815" y2="272" stroke="#d8dee4"/>
+  <line x1="85" y1="217" x2="815" y2="217" stroke="#d8dee4"/>
+  <line x1="85" y1="162" x2="815" y2="162" stroke="#8c959f" stroke-dasharray="4 4"/>
+  <text x="78" y="386" font-size="11" fill="#57606a" text-anchor="end">0%</text>
+  <text x="78" y="331" font-size="11" fill="#57606a" text-anchor="end">25%</text>
+  <text x="78" y="276" font-size="11" fill="#57606a" text-anchor="end">50%</text>
+  <text x="78" y="221" font-size="11" fill="#57606a" text-anchor="end">75%</text>
+  <text x="78" y="166" font-size="11" fill="#57606a" text-anchor="end">100%</text>
+  <rect x="105" y="162.0" width="30" height="220.0" rx="2" fill="#6e7781"/>
+  <text x="120" y="157.0" font-size="10" fill="#6e7781" text-anchor="middle">100%</text>
+  <rect x="143" y="226.0" width="30" height="156.0" rx="2" fill="#bc6b00"/>
+  <text x="158" y="221.0" font-size="10" fill="#bc6b00" text-anchor="middle">71%</text>
+  <rect x="181" y="299.3" width="30" height="82.7" rx="2" fill="#1a7f37"/>
+  <text x="196" y="294.3" font-size="10" fill="#1a7f37" text-anchor="middle">38%</text>
+  <rect x="219" y="302.4" width="30" height="79.6" rx="2" fill="#0969da"/>
+  <text x="234" y="297.4" font-size="10" font-weight="700" fill="#0969da" text-anchor="middle">36%</text>
+  <text x="162" y="402" font-size="13" fill="#1f2328" text-anchor="middle">loc</text>
+  <text x="162" y="417" font-size="10" fill="#57606a" text-anchor="middle">base 138.5</text>
+  <rect x="285" y="162.0" width="30" height="220.0" rx="2" fill="#6e7781"/>
+  <text x="300" y="157.0" font-size="10" fill="#6e7781" text-anchor="middle">100%</text>
+  <rect x="323" y="193.9" width="30" height="188.1" rx="2" fill="#bc6b00"/>
+  <text x="338" y="188.9" font-size="10" fill="#bc6b00" text-anchor="middle">86%</text>
+  <rect x="361" y="199.6" width="30" height="182.4" rx="2" fill="#1a7f37"/>
+  <text x="376" y="194.6" font-size="10" fill="#1a7f37" text-anchor="middle">83%</text>
+  <rect x="399" y="227.3" width="30" height="154.7" rx="2" fill="#0969da"/>
+  <text x="414" y="222.3" font-size="10" font-weight="700" fill="#0969da" text-anchor="middle">70%</text>
+  <text x="342" y="402" font-size="13" fill="#1f2328" text-anchor="middle">tokens</text>
+  <text x="342" y="417" font-size="10" fill="#57606a" text-anchor="middle">base 222k</text>
+  <rect x="465" y="162.0" width="30" height="220.0" rx="2" fill="#6e7781"/>
+  <text x="480" y="157.0" font-size="10" fill="#6e7781" text-anchor="middle">100%</text>
+  <rect x="503" y="199.8" width="30" height="182.2" rx="2" fill="#bc6b00"/>
+  <text x="518" y="194.8" font-size="10" fill="#bc6b00" text-anchor="middle">83%</text>
+  <rect x="541" y="202.3" width="30" height="179.7" rx="2" fill="#1a7f37"/>
+  <text x="556" y="197.3" font-size="10" fill="#1a7f37" text-anchor="middle">82%</text>
+  <rect x="579" y="223.4" width="30" height="158.6" rx="2" fill="#0969da"/>
+  <text x="594" y="218.4" font-size="10" font-weight="700" fill="#0969da" text-anchor="middle">72%</text>
+  <text x="522" y="402" font-size="13" fill="#1f2328" text-anchor="middle">cost</text>
+  <text x="522" y="417" font-size="10" fill="#57606a" text-anchor="middle">base $0.145</text>
+  <rect x="645" y="162.0" width="30" height="220.0" rx="2" fill="#6e7781"/>
+  <text x="660" y="157.0" font-size="10" fill="#6e7781" text-anchor="middle">100%</text>
+  <rect x="683" y="214.6" width="30" height="167.4" rx="2" fill="#bc6b00"/>
+  <text x="698" y="209.6" font-size="10" fill="#bc6b00" text-anchor="middle">76%</text>
+  <rect x="721" y="218.3" width="30" height="163.7" rx="2" fill="#1a7f37"/>
+  <text x="736" y="213.3" font-size="10" fill="#1a7f37" text-anchor="middle">74%</text>
+  <rect x="759" y="230.4" width="30" height="151.6" rx="2" fill="#0969da"/>
+  <text x="774" y="225.4" font-size="10" font-weight="700" fill="#0969da" text-anchor="middle">69%</text>
+  <text x="702" y="402" font-size="13" fill="#1f2328" text-anchor="middle">time</text>
+  <text x="702" y="417" font-size="10" fill="#57606a" text-anchor="middle">base 87.2s</text>
+  <text x="20" y="447" font-size="12" font-weight="600" fill="#0969da">Dopamine wins all four measured metrics: LOC 36%, tokens 70%, cost 72%, time 69%</text>
+  <line x1="20" y1="459" x2="840" y2="459" stroke="#d0d7de"/>
+  <text x="20" y="478" font-size="10" fill="#7d4e00">REPEATS: Dopamine n=4 (48 trials); frozen reference arms n=1 (12 trials each).</text>
+  <text x="20" y="495" font-size="10" fill="#57606a">Tuning set; feature completeness not graded. Efficiency evidence, not proof of “best overall.”</text>
+</svg>

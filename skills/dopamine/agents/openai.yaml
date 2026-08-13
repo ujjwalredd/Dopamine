@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dopamine"
+  short_description: "Verified progress with minimal agent cost"
+  default_prompt: "Use $dopamine to solve this with the smallest verified implementation."

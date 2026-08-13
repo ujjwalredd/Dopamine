@@ -1,0 +1,1 @@
+Fix the billing bug in `billing.py`. A reported checkout with `discount_pct=150` produced a negative total. Discounts outside 0 through 100 are invalid. Fix the root cause so every current caller is protected, preserve valid results and public APIs, and verify it.

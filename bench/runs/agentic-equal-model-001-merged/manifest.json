@@ -1,0 +1,49 @@
+{
+  "created_utc": "2026-08-13T00:18:28.798014+00:00",
+  "method": "Ponytail-style real-repository agentic diff benchmark",
+  "fixture": "tiangolo/full-stack-fastapi-template",
+  "fixture_commit": "cd83fc10ca20393e9ee50e3005e170c6929e047e",
+  "codex_version": "codex-cli 0.147.0",
+  "model": "gpt-5.6-terra",
+  "effort": "medium",
+  "tasks": [
+    "fe-datepicker",
+    "fe-colorpicker",
+    "fe-command",
+    "fe-dropzone",
+    "fe-wizard",
+    "fe-rating",
+    "be-duplicate",
+    "be-search",
+    "be-count",
+    "be-archive",
+    "be-bulkdelete",
+    "be-csv"
+  ],
+  "arms": [
+    "baseline",
+    "caveman",
+    "ponytail",
+    "dopamine"
+  ],
+  "repeats": 1,
+  "pricing_usd_per_million": {
+    "fresh_input": 2.0,
+    "cached_input": 0.2,
+    "output": 12.0
+  },
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+  "cost_label": "API-equivalent estimate; actual Codex subscription billing may differ",
+  "skill_sha256": {
+    "baseline": null,
+    "caveman": "daf9cec496ebd039809d8236f99f17fa1b4beaadf8ce4e2d532d0da51d70afce",
+    "ponytail": "1316a2f3f95741d2300b116fe0c2d81ce4a9568656ed0a62643f54aaf09957f2",
+    "dopamine": "93bf3bb05898836b789a638334a2659fe5481fc87d9981c6ee20ce7f79500e7e"
+  },
+  "merged_from": [
+    "bench/runs/agentic-equal-model-8w-001",
+    "bench/runs/agentic-missing-bulk-001",
+    "bench/runs/agentic-missing-csv-001"
+  ],
+  "completed_cells": 48
+}

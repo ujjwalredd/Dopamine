@@ -1,0 +1,1 @@
+Fix `app.py`. Calls whose names differ only by surrounding whitespace or ASCII letter case must use one cache entry and return the same cached object. Preserve the public function name and return shape. Make the smallest correct change and verify it.

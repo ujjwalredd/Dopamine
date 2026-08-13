@@ -1,0 +1,1 @@
+Fix the security bug in `notes.py`: `read_note(base, name)` must read files located inside `base`, but reject traversal, absolute-path, and symlink escapes. Preserve valid nested relative paths and the existing API. Use the standard library and verify the behavior.

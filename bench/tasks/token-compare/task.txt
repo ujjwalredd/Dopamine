@@ -1,0 +1,1 @@
+Fix `verify_token(candidate, expected)` in `auth.py` so secret comparison uses the Python standard library's timing-attack-resistant primitive. Preserve the boolean API for string inputs and reject non-string inputs by returning `False`. Verify it.

@@ -1,0 +1,112 @@
+{
+  "method": "Ponytail-style real-repository Git diff benchmark",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "tasks": 12,
+  "reference_runs_per_task_arm": 1,
+  "dopamine_tuning_runs_per_task": 4,
+  "trial_counts": {
+    "reference_per_arm": 12,
+    "dopamine": 48
+  },
+  "absolute_means": {
+    "baseline": {
+      "loc": 138.5,
+      "tokens": 222256.16666666666,
+      "cost": 0.14473208333333334,
+      "time": 87.2075
+    },
+    "caveman": {
+      "loc": 98.25,
+      "tokens": 190097.25,
+      "cost": 0.119826,
+      "time": 66.34183333333333
+    },
+    "ponytail": {
+      "loc": 52.083333333333336,
+      "tokens": 184212.41666666666,
+      "cost": 0.11828833333333333,
+      "time": 64.89058333333334
+    },
+    "dopamine": {
+      "loc": 50.166666666666664,
+      "tokens": 156276.8125,
+      "cost": 0.10437975,
+      "time": 60.097770833333335
+    }
+  },
+  "dopamine_repeat_level_means": [
+    {
+      "loc": 46.916666666666664,
+      "tokens": 153749.75,
+      "cost": 0.10059233333333334,
+      "time": 63.12925
+    },
+    {
+      "loc": 54.75,
+      "tokens": 149996.5,
+      "cost": 0.10241008333333333,
+      "time": 61.62441666666667
+    },
+    {
+      "loc": 51.75,
+      "tokens": 176950.33333333334,
+      "cost": 0.11652508333333333,
+      "time": 60.37233333333334
+    },
+    {
+      "loc": 47.25,
+      "tokens": 144410.66666666666,
+      "cost": 0.0979915,
+      "time": 55.26508333333334
+    }
+  ],
+  "dopamine_repeat_level_sample_stdev": {
+    "loc": 3.7675515184857726,
+    "tokens": 14306.504937274332,
+    "cost": 0.008297448837343522,
+    "time": 3.4132470599821576
+  },
+  "normalized_percent_of_baseline": {
+    "baseline": {
+      "loc": 100.0,
+      "tokens": 100.0,
+      "cost": 100.0,
+      "time": 100.0
+    },
+    "caveman": {
+      "loc": 70.9,
+      "tokens": 85.5,
+      "cost": 82.8,
+      "time": 76.1
+    },
+    "ponytail": {
+      "loc": 37.6,
+      "tokens": 82.9,
+      "cost": 81.7,
+      "time": 74.4
+    },
+    "dopamine": {
+      "loc": 36.2,
+      "tokens": 70.3,
+      "cost": 72.1,
+      "time": 68.9
+    }
+  },
+  "winner_by_metric": {
+    "loc": "dopamine",
+    "tokens": "dopamine",
+    "cost": "dopamine",
+    "time": "dopamine"
+  },
+  "source_sha256": {
+    "reference_results": "6ca53e0f7b4c08297e1626d6e508b7e9b2e05b2afbcd839b89bb13772447cafb",
+    "dopamine_results": "df511691abdae5d0a84e7d2ef3a4846b85b29daed842816df9897cc0898c4b2b"
+  },
+  "limitations": [
+    "The Dopamine result is a development-set rerun after tuning on these tasks.",
+    "Competitor bars are frozen prior measurements, not simultaneous reruns.",
+    "Dopamine has four runs per task; frozen competitor arms have one, so competitor uncertainty cannot be estimated.",
+    "Feature completeness was not graded, so efficiency is not overall quality."
+  ]
+}

@@ -1,0 +1,1 @@
+Fix `save_json(path, value)` in `storage.py`. If JSON serialization or writing fails, an existing destination must remain byte-for-byte unchanged. A successful call must atomically replace it with valid UTF-8 JSON. Clean up temporary files, use only the standard library, preserve the API, and verify it.

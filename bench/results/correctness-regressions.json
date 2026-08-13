@@ -1,0 +1,26 @@
+{
+  "status": "failed",
+  "candidate": "dopamine-v7",
+  "skill_sha256": "02c0292b2fa99d8a06aa56169872f2647bdc1cbf712c255b2b8158a5df0b026e",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "tests": [
+    {
+      "task": "lab-unit-harmonization",
+      "passed_checks": 30,
+      "total_checks": 48,
+      "passed": false,
+      "failure_class": "18 conversion-range checks failed",
+      "note": "The first harness attempt exposed a 30-second grader-timeout bug. The unchanged generated workspace was then graded directly; pytest completed in 3.61 seconds."
+    },
+    {
+      "task": "manufacturing-codebook-normalization",
+      "passed_checks": 13,
+      "total_checks": 16,
+      "passed": false,
+      "failure_class": "confidence diversity, semantic alignment, and rationale grounding",
+      "raw_results_sha256": "884c651a87b82bff56e30212f6285ad8f0c36441e2a8619ca66b9a2aed3d26d4"
+    }
+  ],
+  "interpretation": "These are development regression tasks, not fresh holdouts. They disprove correctness-complete and best-overall claims for v7."
+}

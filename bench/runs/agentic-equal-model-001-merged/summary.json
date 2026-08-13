@@ -1,0 +1,32 @@
+{
+  "method": "Ponytail-style real-repository Git diff benchmark",
+  "model": "gpt-5.6-terra",
+  "reasoning_effort": "medium",
+  "tasks": 12,
+  "runs_per_task_arm": 1,
+  "cells": 48,
+  "baseline": {
+    "mean_loc": 138.5,
+    "mean_tokens": 222256.17,
+    "mean_estimated_api_cost_usd": 0.144732,
+    "mean_wall_seconds": 87.2075
+  },
+  "normalized_percent_of_baseline": {
+    "baseline": {"loc": 100.0, "tokens": 100.0, "cost": 100.0, "time": 100.0},
+    "caveman": {"loc": 70.9, "tokens": 85.5, "cost": 82.8, "time": 76.1},
+    "ponytail": {"loc": 37.6, "tokens": 82.9, "cost": 81.7, "time": 74.4},
+    "dopamine": {"loc": 70.5, "tokens": 74.4, "cost": 79.1, "time": 79.2}
+  },
+  "winner_by_metric": {
+    "loc": "ponytail",
+    "tokens": "dopamine",
+    "cost": "dopamine",
+    "time": "ponytail"
+  },
+  "cost_note": "API-equivalent estimate using official standard GPT-5.6 Terra rates retrieved 2026-08-12; actual Codex subscription billing may differ.",
+  "limitations": [
+    "One run per task and arm.",
+    "Feature completeness was not graded.",
+    "The first eight-worker run stalled on five cells; those exact missing cells were rerun at one or two workers and merged."
+  ]
+}

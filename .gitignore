@@ -1,0 +1,30 @@
+.DS_Store
+.codex/
+.nerd/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Pinned third-party repositories are fetched for reproduction, not vendored.
+bench/vendor/
+
+# Preserve published raw datasets; exclude generated trials and logs.
+bench/runs/**
+!bench/runs/agentic-equal-model-001-merged/
+bench/runs/agentic-equal-model-001-merged/**
+!bench/runs/agentic-equal-model-001-merged/results.json
+!bench/runs/agentic-equal-model-001-merged/manifest.json
+!bench/runs/agentic-equal-model-001-merged/summary.json
+!bench/runs/dopamine-minimal-v7-dev-004/
+bench/runs/dopamine-minimal-v7-dev-004/**
+!bench/runs/dopamine-minimal-v7-dev-004/results.json
+!bench/runs/dopamine-minimal-v7-dev-004/manifest.json
+!bench/runs/dopamine-compact-v14-full-001/
+bench/runs/dopamine-compact-v14-full-001/**
+!bench/runs/dopamine-compact-v14-full-001/results.json
+!bench/runs/dopamine-compact-v14-full-001/manifest.json
+!bench/runs/dopamine-compact-v14-n4-001/
+bench/runs/dopamine-compact-v14-n4-001/**
+!bench/runs/dopamine-compact-v14-n4-001/results.json
+!bench/runs/dopamine-compact-v14-n4-001/manifest.json

@@ -1,0 +1,1 @@
+Implement `summarize_transactions(path)` in `reports.py` using the Python standard library. The UTF-8 CSV has `id,amount_cents,status` columns. Return `{"completed_count": int, "completed_cents": int}` using only rows whose status is exactly `completed`. Reject a missing required column or a non-integer completed amount with `ValueError`. Do not add dependencies. Verify it.
