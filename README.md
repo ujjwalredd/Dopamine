@@ -211,10 +211,10 @@ Choose one agent with `--agent codex` or `--agent claude`. The installer refuses
 
 ### Claude Code plugin marketplace
 
-This repository is also a validated Claude Code marketplace. After it is published on GitHub, replace `OWNER` with the repository owner:
+This repository is also a validated Claude Code marketplace:
 
 ```text
-/plugin marketplace add OWNER/Dopamine
+/plugin marketplace add ujjwalredd/Dopamine
 /plugin install dopamine@dopamine-skills
 ```
 

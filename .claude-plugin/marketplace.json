@@ -3,12 +3,15 @@
   "name": "dopamine-skills",
   "description": "Dopamine: adaptive effort and the smallest verified solution.",
   "owner": {
-    "name": "Dopamine contributors"
+    "name": "ujjwalredd",
+    "url": "https://github.com/ujjwalredd"
   },
   "plugins": [
     {
       "name": "dopamine",
       "description": "Make Claude predict, act, measure, learn, and stop at the smallest verified solution.",
+      "homepage": "https://github.com/ujjwalredd/Dopamine",
+      "repository": "https://github.com/ujjwalredd/Dopamine",
       "source": "./",
       "strict": false,
       "skills": [
