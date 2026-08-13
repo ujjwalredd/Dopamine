@@ -1,0 +1,15 @@
+{
+  "name": "dopamine",
+  "version": "0.1.0",
+  "description": "Adaptive effort and the smallest verified solution for agentic work.",
+  "author": {
+    "name": "ujjwalredd",
+    "url": "https://github.com/ujjwalredd"
+  },
+  "homepage": "https://github.com/ujjwalredd/Dopamine",
+  "repository": "https://github.com/ujjwalredd/Dopamine",
+  "license": "MIT",
+  "keywords": ["verification", "efficiency", "agent-skills", "productivity"],
+  "skills": "./skills/",
+  "rules": "./.qoder/rules/"
+}

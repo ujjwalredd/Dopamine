@@ -1,0 +1,23 @@
+{
+  "name": "dopamine-agent-skill",
+  "version": "0.1.0",
+  "description": "Adaptive effort and the smallest verified solution for AI coding agents.",
+  "keywords": ["pi-package", "pi", "agent-skills", "verification", "efficiency"],
+  "license": "MIT",
+  "author": {
+    "name": "ujjwalredd",
+    "url": "https://github.com/ujjwalredd"
+  },
+  "homepage": "https://github.com/ujjwalredd/Dopamine",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujjwalredd/Dopamine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ujjwalredd/Dopamine/issues"
+  },
+  "files": ["AGENTS.md", "skills/", "LICENSE"],
+  "pi": {
+    "skills": ["./skills"]
+  }
+}

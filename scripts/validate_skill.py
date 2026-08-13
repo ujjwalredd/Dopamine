@@ -46,10 +46,19 @@ def main() -> int:
             errors.append("Claude marketplace name must be dopamine-skills")
         if len(plugins) != 1 or plugins[0].get("name") != "dopamine":
             errors.append("Claude marketplace must expose exactly the dopamine plugin")
-        if plugins and plugins[0].get("skills") != ["./skills/dopamine"]:
-            errors.append("Claude marketplace must expose only skills/dopamine")
+        if plugins and plugins[0].get("source") != "./":
+            errors.append("Claude marketplace plugin source must be the repository root")
+        if plugins and "skills" in plugins[0]:
+            errors.append("Claude marketplace must defer component discovery to plugin.json")
     except (OSError, json.JSONDecodeError) as error:
         errors.append(f"invalid Claude marketplace manifest: {error}")
+    plugin_path = ROOT / ".claude-plugin/plugin.json"
+    try:
+        plugin = json.loads(plugin_path.read_text(encoding="utf-8"))
+        if plugin.get("name") != "dopamine" or plugin.get("version") != "0.1.0":
+            errors.append("Claude plugin manifest must identify dopamine 0.1.0")
+    except (OSError, json.JSONDecodeError) as error:
+        errors.append(f"invalid Claude plugin manifest: {error}")
     if errors:
         print("\n".join(f"ERROR: {error}" for error in errors), file=sys.stderr)
         return 1

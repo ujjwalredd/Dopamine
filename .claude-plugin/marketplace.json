@@ -13,10 +13,6 @@
       "homepage": "https://github.com/ujjwalredd/Dopamine",
       "repository": "https://github.com/ujjwalredd/Dopamine",
       "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/dopamine"
-      ],
       "category": "development"
     }
   ]

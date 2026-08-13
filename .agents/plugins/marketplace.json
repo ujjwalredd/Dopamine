@@ -1,0 +1,21 @@
+{
+  "name": "dopamine",
+  "interface": {
+    "displayName": "Dopamine"
+  },
+  "plugins": [
+    {
+      "name": "dopamine",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ujjwalredd/Dopamine.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -11,7 +11,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/version-0.1.0-58a6ff?style=flat-square" alt="Version 0.1.0">
   <img src="https://img.shields.io/badge/skill-valid-2da44e?style=flat-square" alt="Skill valid">
-  <img src="https://img.shields.io/badge/tests-10%20passing-2da44e?style=flat-square" alt="Ten tests passing">
+  <img src="https://img.shields.io/badge/tests-18%20passing-2da44e?style=flat-square" alt="Eighteen tests passing">
   <img src="https://img.shields.io/badge/license-MIT-58a6ff?style=flat-square" alt="MIT license">
 </p>
 
@@ -186,39 +186,51 @@ Security controls, trust-boundary validation, accessibility basics, public compa
 
 ## Install
 
-Dopamine follows the open Agent Skills directory format. One dependency-free installer supports both Codex and Claude Code.
+Dopamine ships one canonical Agent Skill plus native manifests and generated rule adapters. The installer never overwrites an existing skill or instruction file.
 
-### Codex + Claude Code
-
-From this checkout, install Dopamine for your user account in both agents:
+### Codex
 
 ```sh
-./scripts/install.sh --agent all --scope user
+codex plugin marketplace add ujjwalredd/Dopamine
+codex plugin add dopamine@dopamine
 ```
 
-Or install it only in the current project:
+Or install the skill directly from a checkout:
 
 ```sh
-./scripts/install.sh --agent all --scope project
+./scripts/install.sh --agent codex --scope user
 ```
 
-Choose one agent with `--agent codex` or `--agent claude`. The installer refuses to overwrite an existing installation.
-
-| Agent | User installation | Project installation | Explicit invocation |
-|---|---|---|---|
-| Codex | `$HOME/.agents/skills/dopamine` | `.agents/skills/dopamine` | `$dopamine` |
-| Claude Code | `$HOME/.claude/skills/dopamine` | `.claude/skills/dopamine` | `/dopamine` |
-
-### Claude Code plugin marketplace
-
-This repository is also a validated Claude Code marketplace:
+### Claude Code
 
 ```text
 /plugin marketplace add ujjwalredd/Dopamine
 /plugin install dopamine@dopamine-skills
 ```
 
-Claude may ask for `/reload-plugins` after installation. Plugin invocation is namespaced as `/dopamine:dopamine`. See Claude Code's official [skill](https://code.claude.com/docs/en/slash-commands) and [plugin marketplace](https://code.claude.com/docs/en/discover-plugins) documentation.
+### Multi-agent checkout installer
+
+```sh
+git clone https://github.com/ujjwalredd/Dopamine.git
+cd Dopamine
+./scripts/install.sh --agent all --scope user
+```
+
+Project installation:
+
+```sh
+./scripts/install.sh --agent all --scope project --project /path/to/repository
+```
+
+The project installer supports Codex, Claude Code, OpenCode, Grok Build, OpenClaw, Cursor, Windsurf, Cline, GitHub Copilot, Kiro, and Qoder. `--agent portable` installs `AGENTS.md` for compatible agents. See the [full integration guide](docs/INTEGRATIONS.md) for individual targets, Gemini CLI and Pi commands, overwrite behavior, and verification status.
+
+### Supported agent formats
+
+| Native skill, extension, or plugin | Rules or portable instructions |
+|---|---|
+| Claude Code, Codex, OpenCode, Gemini CLI, Pi, GitHub Copilot CLI, Qoder, Devin CLI, Grok Build, OpenClaw, Hermes Agent | Cursor, Windsurf, Cline, GitHub Copilot Chat/editor, Kiro, Antigravity CLI, CodeWhale, Swival, Aider, Zed, JetBrains Junie, Amp, Jules |
+
+“Supported” does not mean every unavailable vendor CLI was secretly runtime-tested. Claude and Gemini manifests passed their vendor validators, OpenCode discovered Dopamine in a live catalog check, the Codex plugin passed the current schema validator, and all other adapters pass repository structural tests. The exact evidence and untested boundaries are in the [support matrix](docs/INTEGRATIONS.md#support-matrix).
 
 ### Start using it
 
@@ -313,6 +325,7 @@ Historical executable regression tasks against the older v7 candidate failed ove
 
 ```sh
 python3 scripts/validate_skill.py
+python3 scripts/generate_integrations.py --check
 python3 -m unittest discover -s tests -v
 python3 bench/report_agentic.py
 ```
@@ -365,6 +378,12 @@ Dopamine/
 │   ├── SKILL.md                    # compact agent workflow
 │   ├── agents/openai.yaml          # display metadata
 │   └── references/verification.md  # verification routing
+├── .codex-plugin/                  # Codex plugin manifest
+├── .claude-plugin/                 # Claude plugin and marketplace
+├── .opencode/skills/dopamine/      # OpenCode-discoverable copy
+├── .cursor/ .windsurf/ .clinerules/ # generated editor rules
+├── .github/ .kiro/ .qoder/         # Copilot, Kiro, and Qoder adapters
+├── docs/INTEGRATIONS.md             # hosts, install paths, test status
 ├── assets/
 │   └── benchmark-agentic-dopamine.svg
 ├── bench/
@@ -373,7 +392,10 @@ Dopamine/
 │   ├── report_agentic.py           # deterministic report generator
 │   ├── REPORT.md                   # full methodology and limitations
 │   └── results/                    # machine-readable summaries
-├── scripts/validate_skill.py
+├── scripts/
+│   ├── install.sh                   # safe multi-agent installer
+│   ├── generate_integrations.py     # deterministic adapter generator
+│   └── validate_skill.py
 ├── tests/
 └── .github/workflows/ci.yml
 ```
@@ -386,6 +408,7 @@ Before submitting a change:
 
 ```sh
 python3 scripts/validate_skill.py
+python3 scripts/generate_integrations.py --check
 python3 -m unittest discover -s tests -v
 python3 bench/report_agentic.py
 ```

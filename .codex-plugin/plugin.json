@@ -1,0 +1,29 @@
+{
+  "name": "dopamine",
+  "version": "0.1.0",
+  "description": "Adaptive effort and the smallest verified solution for agentic work.",
+  "author": {
+    "name": "ujjwalredd",
+    "url": "https://github.com/ujjwalredd"
+  },
+  "homepage": "https://github.com/ujjwalredd/Dopamine",
+  "repository": "https://github.com/ujjwalredd/Dopamine",
+  "license": "MIT",
+  "keywords": ["verification", "efficiency", "agent-skills", "productivity"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Dopamine",
+    "shortDescription": "Smallest verified solution",
+    "longDescription": "Predict the result, choose adaptive effort, act, measure, update, and stop when the smallest complete solution is verified.",
+    "developerName": "ujjwalredd",
+    "category": "Productivity",
+    "capabilities": ["Instructions"],
+    "websiteURL": "https://github.com/ujjwalredd/Dopamine",
+    "defaultPrompt": [
+      "Use Dopamine to make the smallest verified change.",
+      "Use Dopamine to debug this with targeted evidence.",
+      "Use Dopamine to review this work for unnecessary complexity."
+    ],
+    "brandColor": "#E5487B"
+  }
+}

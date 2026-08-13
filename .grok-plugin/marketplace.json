@@ -1,0 +1,16 @@
+{
+  "name": "dopamine",
+  "description": "Dopamine agent skill integrations.",
+  "owner": {
+    "name": "ujjwalredd",
+    "url": "https://github.com/ujjwalredd"
+  },
+  "plugins": [
+    {
+      "name": "dopamine",
+      "description": "Adaptive effort and the smallest verified solution.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
