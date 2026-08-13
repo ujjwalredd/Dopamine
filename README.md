@@ -447,12 +447,6 @@ Never weaken a verifier, authorization boundary, input validation, secret handli
 
 Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
 
-## Credits
-
-Dopamine's benchmark presentation was informed by Ponytail's transparent real-repository benchmarking style. Dopamine's workflow and implementation are original and center on adaptive evidence loops, delivery boundaries, and verified progress per unit cost.
-
-The project also builds on the open Agent Skills format used by Codex and other compatible hosts.
-
 ## License
 
 [MIT](LICENSE). Use it, test it, challenge it, and publish the failures too.
