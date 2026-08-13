@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/Dopamine.png" width="718" alt="Dopamine molecular structure">
+  <img src="assets/Dopamine.png" width="200" alt="Dopamine molecular structure">
 </p>
 
 <h1 align="center">Dopamine</h1>
