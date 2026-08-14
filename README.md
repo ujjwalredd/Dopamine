@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/version-0.1.0-58a6ff?style=flat-square" alt="Version 0.1.0">
   <img src="https://img.shields.io/badge/skill-valid-2da44e?style=flat-square" alt="Skill valid">
   <img src="https://img.shields.io/badge/tests-18%20passing-2da44e?style=flat-square" alt="Eighteen tests passing">
+  <a href="https://github.com/hashgraph-online/hol-guard"><img src="https://img.shields.io/badge/HOL%20Guard-passing-00a67e?style=flat-square" alt="HOL Guard passing"></a>
   <img src="https://img.shields.io/badge/license-MIT-58a6ff?style=flat-square" alt="MIT license">
 </p>
 
